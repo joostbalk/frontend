@@ -1,5 +1,157 @@
 /* CSS Document */
+
 *, *::after, *::before {
   box-sizing:border-box;  
 }
 
+
+/* -- Mobiel scherm --*/
+body {
+ font-family: 'roboto', sans-serif;
+ color: #272727;
+}
+
+header{
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+header section{
+  background-color: #90b9cb;
+  width: 100%;
+  padding-top: 30%;
+  margin-top: -25%;
+  margin-bottom: 10%;
+}
+
+nav{
+  display: flex;
+  order: 1;
+}
+
+img:first-of-type{
+  width: 35%;
+  margin: 2em auto 2em 10%;
+}
+
+ul{
+  margin-right: 10%;
+  display: none;
+  list-style: none;
+}
+
+a{
+  text-decoration: none;  
+}
+
+h1{
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #ffffff;
+  margin-left: 10%;
+}
+
+header section p{
+  max-width: 80%;
+  font-size: 0.8em;
+  line-height: 180%;
+  margin-left: 10%;
+  padding-bottom: 2em;
+  color: #ffffff;
+  font-weight: 300;
+}
+
+
+/*-- formulier --*/
+
+/*-- algemene stijling formulier --*/
+form{
+z-index: 1;
+width: 80%;
+margin: auto;
+background-color: #ffff;
+border: 0.05em solid #f2f2f2;
+
+box-shadow: 0.05em 0.05em 0.4em 0.05em #656565 ;
+}
+
+/*-- titel vh formulier --*/
+form h3{
+  font-size: 1em;
+  font-weight: 500;
+  padding-bottom: 0.6em ;
+  border-bottom: 3px solid #1e8bc3;
+  text-align: center;
+}
+
+/*-- stijling label en inputvelden --*/
+label{
+  font-size: 0.9em;
+  font-weight: 400;
+  margin-left: 5%;
+}
+
+input{
+  width: 90%;
+  height: 2.2em;
+  margin: 2% 5% 6% 5%;
+  background-color: #f2f2f2;
+  border-style: none;
+}
+
+
+/*-- stijling tussenlijnen --*/
+hr{
+  max-width: 90%;
+  border: 1px solid #1e8bc3;
+}
+
+form p{
+  display: inline-block;
+  font-size: 0.8em;
+  font-weight: 500;
+  margin-left: 5%;
+  margin-top: -2%;
+  color: #ff438b;
+}
+
+
+form h4{
+ font-size: 0.85em;
+ font-weight: 400;
+ color: #898989;
+ margin-left: 5%;
+
+}
+/*-- einde opmaak formulier --*/
+
+main h4{
+  font-family: ;
+  font-size: 0.8em;
+  font-weight: 300;
+  color: #1e8bc3;
+}
+main h2{
+  font-family: ;
+  font-size: 1.2em;
+  font-weight: 450;
+  border-bottom: 2px solid #1e8bc3;
+  padding-bottom: 0.4em;
+  max-width: 80%; 
+  margin: 0 auto;
+  
+}
+h3{
+  text-align: left;
+}
+main p{
+  font-weight: 300;
+  line-height: 160%;
+  color: #272727;
+  
+}
+
+main section{
+  max-width: 80%;
+  margin: auto;
+}
