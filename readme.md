@@ -6,15 +6,20 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 
 
 ## Bronnenlijst
-1. -bron 1-
-2. -bron 2-
-3. -...-
+1. -bron 1: "HTML & CSS design and build websites (Jon Duckett)-
+2. -bron 2: "Flexbox froggy-
+3. -bron 3: "Javascript & Jquery interactive front-end web development (Jon Duckett)-
+4. -bron 4: Css-tricks.com" 
+5. -bron 5: developer.mozilla.org
+6. -bron 6: Mees Rutten heeft mij geholpen met de javascript wanneer ik daar vragen over had.
+7. -bron 7: De bronnen van school heb ik veel gebruikt
 
-
+## herkansing week 9
+-Vlak voor het inleveren van dit bestand is er iets misgegaan in de articles. zoals in de screenshot van week 3 te zien is staan de articles goed onder elkaar. Dit is echter op het moment van uploaden niet meer het geval, ik ga na het uploaden verder met het zoeken naar de veroorzaker ervan en hoop morgen tijdens de herkansing dat ik dit dan heb opgelost. 
 
 ## Eindgesprek (week 7/8)
 
--dit ging goed & dit was lastig-
+-Ik loop enorm te kloten met de rekenmodule, alles zou moeten kloppen maar er komen geen resultaten uit. Ik heb dan wel geen super funky microinteractie in mijn code zitten, in plaats daarvan heb ik een rekentool die ook echt werkt. Ik hoop dat dit ook laat zien dat ik veel heb geleerd dit blok. Het samenvoegen van de inputvelden en uitkomsten daarvan was namelijk heel erg veel werk-
 
 **Screenshot(s):**
 
@@ -38,11 +43,10 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 
 ### Stand van zaken
 
--dit ging goed & dit was lastig-
+-mobiel ben ik bijna klaar nu, ik heb mobile first ontworpen en dat was een stuk makkelijker dan gedacht, normaal doe ik het namelijk altijd andersom. Flexbox froggy ook uitgespeeld met behulp van Danny in de les-
 
-**Screenshot(s):**
+**Screenshot(s):** <img src="images/voortgang-mob.png">
 
--screenshot(s) van hoe ver je bent met korte uitleg-
 
 ### Agenda voor meeting
 
@@ -56,7 +60,7 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 
 ### Verslag van meeting
 
--na afloop snel uitkomsten vastleggen-
+-Ik ben op de goede weg, mobiel is mijn website al best netjes maar nu moet ik hem verder responsive gaan maken zodat hij op grotere schermen beter te zien is. De content van de artikelen moet ik zelf schrijven, hier moet ik dus optijd mee beginnen.-
 
 
 

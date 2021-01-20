@@ -11,6 +11,8 @@
 	<link href="styles/style.css" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -31,53 +33,135 @@
 			<p>Een correct risicomanagement is voor veel beginnend traders erg lastig te hanteren. De meeste beginnende traders denken slapend rijk te worden, helaas werkt dat niet zo. Om een succesvolle trader te worden <em>moet</em> je een goed risicomanagement hanteren. Wij willen jou helpen een goede risicoanalyse te maken zodat je niet al je geld verliest in een paar trades.</p>
 		</section>
 
-		<form action="">
 
-			<form action="">
-				<h3>Positie grootte berekenen</h3>
-				
+
+
+	<form action="">
+	  <h3>Positie grootte berekenen</h3>
+
+	  <label for="">Saldo account $</label>
+	  <input id="account" type="number" value="0">
+	  
+		<label for="">Gewenst risico:</label> <br>
+		<input id="risico" type="range" min="0" max="10" value="1" step="0.5">
+	  
+	  <p>
+		  <data id="uitkomst" value="0">0</data>
+		%</p>
+	  <p>Cash risico $
+		  <data id="cashRisico" value="0">0</data>
+		</p>
+
+
 		
-				<label for="">Saldo account $: </label>
-				<input id="saldo" type="number" value="0">
-				
-				  <label for="">Gewenste risico:</label> 
-				  <input id="risico" type="range" min="0" max="10" value="1" step="0.5">
-				
-				<p>
-					<data id="output" value="0">0</data>
-				  %</p>
-				<p>Risico in geld $
-					<data id="geldrisico" value="0">0</data>
-				  </p>
+
+	  <script>
+		const balans = document.querySelector("#account");
+		const uitkomst = document.querySelector("#uitkomst");
+		const cashRisk = document.querySelector("#cashRisico");
+		const slider = document.querySelector("#risico");
+		uitkomst.textContent = uitkomst.value = slider.value;
+		cashRisico.textContent = cashRisico.value = balans.value;
+		let riskValue = cashRisico.value
+		let sliderValue = slider.value
+		slider.oninput = e => {
+		  sliderValue = uitkomst.value = uitkomst.textContent = e.target.value
+		  updateCashRisk()
+		};
+		balans.oninput = e => {
+		  riskValue = cashRisico.value = cashRisico.textContent = e.target.value
+		  updateCashRisk()
+		};
+
+		function updateCashRisk() {
+		  cashRisico.textContent = cashRisico.value = balans.value * (sliderValue / 100)
+		};
+	  </script>
+
+
+
 
 
 
 				  <hr>
   
-        <label for="">Instappunt trade:</label>
-        <input id="Startpunt" type="number" value="" min="0" max="none" step="0.000000000001">
-        
-  
-        <label for="">Stop bij: </label>
-        <input id="stop" type="number" value="" min="0" max="none" step="0.000000000001">
-       
-  
-        <label for="">Pak winst op:</label>
-        <input id="winst" type="number" value="" min="0" max="none" step="0.000000000001">
-  
-		<hr>
-		
+				  <label for="">Start </label>
+				  <input id="start" type="number" value="" min="0" max="none" step="0.000000000001">
+				  
+			
+				  <label for="">Stop bij verlies </label>
+				  <input id="stop" type="number" value="" min="0" max="none" step="0.000000000001">
+				  
+			
+				  <label for="">Pak winst bij: </label>
+				  <input id="winst" type="number" value="" min="0" max="none" step="0.000000000001">
+			
+				  <hr>
+			
+				  <h4 id="lotsize">
+					Positiegrootte:
+					<p id="coins">...</p>
+				  </h4>
+			
+				  <h4 id="riskreward"> Risico/reward ratio:
+					<p id="reward">getal</p>
+				  </h4>
+			
+				  <h4 id="potentialprofit">
+					potentiele winst $:
+					<p id="potentieel">getal</p>
+					
 
-<h4 id="lotsize">
-          Grootte handelspositie:
-          </h4>
-  
-        <h4 id="riskreward"> Risk/reward ratio:
-          </h4>
-  
-        <h4 id="potentialprofit">
-          potentiele winst:
-         <h4>
+			
+					  <script>
+						const start = document.querySelector("#start");
+						const stop = document.querySelector("#stop");
+						const winst = document.querySelector("#winst");
+						const coins = document.querySelector("#coins");
+						const reward = document.querySelector("#reward");
+						const potentieel = document.querySelector("#potentieel");
+						coins.textContent = start.value = coins.value;
+						reward.textContent = stop.value = reward.value;
+						potentieel.textContent = winst.value = potentieel.value;
+						let startValue = start.value;
+						let stopValue = stop.value;
+						let winstValue = winst.value;
+					   
+						start.oninput = e => {
+						 startValue = start.value = coins.textContent = e.target.value
+						  updateCoin()
+						};
+						stop.oninput = e => {
+						  stopValue = stop.value = reward.textContent = e.target.value
+						  updateCoin()
+						};
+						winst.oninput = e => {
+						  winstValue = winst.value = potentieel.textContent = e.target.value
+						  updateRisk()
+						};
+		  
+						let coinsVal = 0
+						let riskVal = 0
+		  
+						function updateCoin() {
+						  coins.textContent = coinsVal = cashRisk.value / (startValue - stop.value)
+						  updatePotentieel()
+						  
+						};
+			
+						function updateRisk() {
+						  reward.textContent = riskVal = (winstValue - startValue) / (startValue - stop.value)
+						  updatePotentieel()
+						};
+						
+						function updatePotentieel(){
+						  potentieel.textContent = (winstValue - startValue) * coinsVal
+						};
+					   
+					
+			  
+					  </script>
+
 
 
 
@@ -94,35 +178,63 @@
 	<main>
 	<h2>Recente artikelen</h2>
 
-<section>
-	<img src="" alt="">
+<article>
+	<img src="images/header1.png" alt="">
+	<h4>26 December 2020 - 5 min</h4>
+<h3>Hoe gebruik ik de wicklog rekentool?</h3> 
+<p>De positie grootte berekenaar van Wicklog is één van de meest handige tools.</p>
+<a href="artikel1.html">Lees verder</a>
+</article>
+
+<article>
+	<img src="images/header2.png" alt="">
 	<h4>11 November 2020 - 5 min</h4>
-<h3>How do i use the Wicklog risk management tool.</h3> 
-<p>Joost wat ben jij een ongelofelijke kluns dat je niet ziet dat je aan het kijken bent of je de H3 aan het veranderen bent ipv de P tekst.</p>
+<h3>Hoe bepaal ik mijn risicomanagement.</h3> 
+<p>Risicomanagement wordt bepaald door de grootte van je handelsaccount.</p>
+<a href="artikel1.html">Lees verder</a>
+</article>
 
-</section>
+<article>
+	<img src="images/header3.png" alt="">
+	<h4>14 Januari 2020 - 5 min</h4>
+<h3>Wat is stap één van de wicklog tool?</h3> 
+<p>In de eerste twee stappen zet je het saldo van jouw handelsaccount.</p>
+<a href="artikel1.html">Lees verder</a>
+</article>
 
-<section>
-	<img src="" alt="">
-	<h4>11 November 2020 - 5 min</h4>
-<h3>How do i use the Wicklog risk management tool.</h3> 
-<p>Joost wat ben jij een ongelofelijke kluns dat je niet ziet dat je aan het kijken bent of je de H3 aan het veranderen bent ipv de P tekst.</p>
-
-</section>
-
-<section>
-	<img src="" alt="">
-	<h4>11 November 2020 - 5 min</h4>
-<h3>How do i use the Wicklog risk management tool.</h3> 
-<p>Joost wat ben jij een ongelofelijke kluns dat je niet ziet dat je aan het kijken bent of je de H3 aan het veranderen bent ipv de P tekst.</p>
-
-</section>
+<article>
+	<img src="images/header4.png" alt="">
+	<h4>12 December 2020 - 5 min</h4>
+<h3>Hoe berekent wicklog mijn verwachte winst?</h3> 
+<p>In stap 2 zet je de gegevens die je nodig hebt voor de trade die jij in wilt gaan.</p>
+<a href="artikel1.html">Lees verder</a>
+</article>
 
 
 
 	
 		
 </main>
+
+
+
+<footer>
+<img src="images/wicklog-logo-wit.svg" alt="">
+<ul>
+	<li><a href="">Artikelen</a></li>
+	<li><a href="">Risico </a></li>
+	<li><a href="">Contact</a></li>
+</ul>
+
+<ul>
+	<li><a href="">Privacy Policy</a></li>
+	<li><a href="">Terms of use</a></li>
+</ul>
+
+<p>&copy; 2020 wicklog.com</p>
+
+</footer>
+
 <script src="scripts/script.js"></script>
 </body>
 	

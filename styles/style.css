@@ -5,12 +5,18 @@
 }
 
 
+img{
+  width: 100%;
+}
+
 /* -- Mobiel scherm --*/
 body {
  font-family: 'roboto', sans-serif;
  color: #272727;
+ background-color: #fcfcfc;
 }
 
+/*-- Begin opmaak header (mobiel) --*/
 header{
   display: flex;
   flex-direction: column-reverse;
@@ -20,54 +26,60 @@ header section{
   background-color: #90b9cb;
   width: 100%;
   padding-top: 30%;
-  margin-top: -25%;
-  margin-bottom: 10%;
+  margin: -25% 0 10% 0;
 }
 
+/*-- begin navigatie (mobiel)  --*/
 nav{
   display: flex;
   order: 1;
 }
 
-img:first-of-type{
+header img{
   width: 35%;
-  margin: 2em auto 2em 10%;
+  margin: 2em auto 2em 5%;
 }
 
-ul{
+/*-- display none & block zijn niet te animeren --*/
+ header ul{
   margin-right: 10%;
   display: none;
   list-style: none;
 }
 
-a{
+header a{
   text-decoration: none;  
 }
+/*-- einde navigatie (mobiel) --*/
 
+
+
+/*-- tekst veld met uitleg over wicklog (mobiel) --*/
 h1{
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-weight: 500;
   color: #ffffff;
-  margin-left: 10%;
+  margin-left: 5%;
 }
 
 header section p{
-  max-width: 80%;
-  font-size: 0.8em;
+  max-width: 90%;
+  font-size: 0.9em;
   line-height: 180%;
-  margin-left: 10%;
+  margin-left: 5%;
   padding-bottom: 2em;
   color: #ffffff;
   font-weight: 300;
 }
+/*-- einde tekstveld (mobiel) --*/
 
 
 /*-- formulier --*/
-
 /*-- algemene stijling formulier --*/
 form{
+  background-color: #ffffff;
 z-index: 1;
-width: 80%;
+width: 90%;
 margin: auto;
 background-color: #ffff;
 border: 0.05em solid #f2f2f2;
@@ -123,35 +135,604 @@ form h4{
  margin-left: 5%;
 
 }
-/*-- einde opmaak formulier --*/
+/*-- einde opmaak formulier (mobiel) --*/
+
+/*-- Begin main content (mobiel) --*/
 
 main h4{
-  font-family: ;
+  max-width: 90%;
+  margin-left: 5%;
   font-size: 0.8em;
   font-weight: 300;
   color: #1e8bc3;
 }
+
 main h2{
-  font-family: ;
   font-size: 1.2em;
   font-weight: 450;
   border-bottom: 2px solid #1e8bc3;
   padding-bottom: 0.4em;
-  max-width: 80%; 
+  max-width: 90%; 
   margin: 0 auto;
   
 }
 h3{
-  text-align: left;
+  font-size: 1em;
+  max-width: 90%;
+  margin-left: 5%;
+  
 }
 main p{
+  font-size: .9em;
+  max-width: 90%;
+  margin-left: 5%;
   font-weight: 300;
   line-height: 160%;
   color: #272727;
   
 }
+/*-- Link naar artikelen --*/
+article a{
+  font-size:1em;
+  font-weight: 500;
+  color: #1e8bc3;
+  text-decoration: none;
+  max-width: 100%;
+  margin-left: 5%;
+}
 
-main section{
-  max-width: 80%;
-  margin: auto;
+article a:hover{
+  color: #707070;
+  margin-left: 5.5%;
+  transition: 0.3s;
+}
+
+/*-- Stijling artikelvakje (mobiel) --*/
+article{
+  background-color: #ffffff;
+  width: 90%;
+  margin: 10% auto;
+  border: 0.05em solid #f2f2f2;
+  padding-bottom: 2em;
+  
+
+box-shadow: 0.02em 0.03em 0.4em 0.05em #dadfe1 ;
+}
+/*-- einde stijling main (mobiel) --*/
+
+
+/*-- Stijling footer (mobiel) --*/
+footer{
+  max-width: 100%;
+  background-color: #272727;
+  text-align: center;
+}
+
+/*-- footer logo --*/
+footer img{
+  width: 30%;
+  padding: .8em 0 .6em 0;
+  }
+
+
+
+  footer ul{
+    max-width: 90%;
+    list-style: none;
+    display:flex;
+    justify-content: space-between;
+    margin-top: 0;
+    margin-bottom: .4em;
+    padding-top: 0;
+    padding-bottom: 0;
+    
+  }
+  footer li{
+    padding:0;
+    margin: 0;
+  }
+
+  footer a{
+  font-size: .8em;
+  color: #dadfe1;
+  text-decoration: none;
+  margin-bottom: 0;
+  
+  }
+  Footer ul:nth-of-type(2){
+    justify-content: space-around;
+  }
+  
+  footer ul:nth-of-type(2) a{
+    font-weight: 500;
+    color: #707070;
+    font-size: .6em;
+  }
+  footer p{
+    color: #ffffff;
+    font-size:.5em;
+    background-color: #303030;
+    padding: .5em 0 1.2em 0;
+    margin:0;
+    font-weight: 300;
+    
+  }
+  /*-- einde stijling mobiel --*/
+
+
+
+
+
+  /*-- begin responsive tablet  --*/
+  @media screen and (min-width: 600px){
+
+    nav{
+      margin-bottom: 2%;
+    }
+
+    header img{
+      margin-left: 10%;
+      max-width: 25%;
+    }
+
+    header h1{
+      margin-left: 10%;
+      font-size: 1.8em;
+    }
+
+    header section p{
+      font-size: 1.2em;
+      margin-left: 10%;
+      max-width: 80%;
+    }
+
+ }
+
+/*-- formulier begin --*/
+    form{
+      max-width: 80%;
+    }
+
+/*-- titel vh formulier --*/
+form h3{
+  font-size: 1.4em;
+  font-weight: 500;
+  padding-bottom: 1em ;
+}
+
+/*-- stijling label en inputvelden --*/
+label{
+  font-size: 1.2em;
+}
+
+input{
+  height: 3em;
+  margin: 2% 5% 4% 5%;
+}
+
+/*-- stijling tussenlijnen --*/
+hr{
+  max-width: 90%;
+  border: 1px solid #1e8bc3;
+}
+
+form p{
+  font-size: 1.2em;
+}
+
+form h4{
+ font-size: 1.1em;
+}
+/*-- einde opmaak formulier --*/
+
+
+
+
+/*-- begin main --*/
+
+
+main h2{
+  font-size: 1.6em;
+  font-weight: 450;
+}
+
+
+/*-- opmaak artikelen --*/
+main h4{
+  font-size: .9em;
+}
+
+h3{
+  font-size: 1.2em;
+  max-width: 90%;
+  margin-left: 5%;
+  
+}
+main p{
+  font-size: 1em;
+  }
+
+
+article a{
+  font-size:1.1em;
+  }
+
+article a:hover{
+  color: #707070;
+  margin-left: 5.5%;
+  transition: 0.3s;
+}
+
+article{
+  background-color: #ffffff;
+  width: 42%;
+  margin-left: 5%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  display: inline-block;
+  
+
+box-shadow: 0.02em 0.03em 0.4em 0.05em #dadfe1 ;
+}
+
+/*-- einde main --*/
+
+
+/*-- Begin footer --*/
+footer{
+  max-width: 100%;
+}
+
+footer img{
+  width: 20%;
+  }
+
+  footer ul{
+    max-width: 60%;
+    margin-left: 20%;
+    display:flex;
+    justify-content: space-around;
+    padding: 0;
+    
+  }
+  
+  footer a{
+  padding: 0 2em;
+  }
+  Footer ul:nth-of-type(2){
+    justify-content: center;
+  }
+  
+  footer ul:nth-of-type(2) a{
+    font-weight: 500;
+    color: #707070;
+    font-size: .6em;
+  }
+  footer p{
+    color: #ffffff;
+    font-size:.5em;
+    background-color: #303030;
+    padding: .5em 0 1.2em 0;
+    margin:0;
+    font-weight: 300;
+    
+  }
+/*-- einde footer  --*/
+
+
+
+
+
+
+
+/*-- begin responsive tablet  --*/
+@media screen and (min-width: 850px){
+
+
+h1{
+  margin-right:10% ;
+  text-align: center;
+}
+
+
+Header ul{
+  margin-right: 9%;
+  margin-top: 6%;
+  display: inline;
+}
+
+header li{
+  display: inline;
+}
+
+header a{
+  font-size: 1.1em;
+  color: #272727;
+  padding: .5em;
+}
+
+
+  header section p{
+    max-width: 80%;
+    text-align: center;
+  }
+
+form{
+  max-width: 60%;
+}
+
+footer ul{
+  max-width: 50%;
+  margin-left: 25%;
+  
+}
+
+}
+
+
+ /*-- begin responsive tablet  --*/
+ @media screen and (min-width: 1000px){
+header img{
+  max-width: 20%;
+}
+
+  form{
+    max-width: 50%;
+  }
+
+    header section p{
+      margin-left: 20%;
+      max-width: 60%;
+      text-align: center;
+    }
+  }
+
+  header section{
+    margin-bottom: 5% ;
+  }
+
+  main{
+    max-width: 90%;
+    margin-left: 5%;
+    padding-top: 0;
+  }
+
+
+
+
+/*-- begin opmaak laptop  --*/
+@media screen and (min-width: 1280px){
+
+
+header img{
+  width: 15%;
+  margin-left: 5%;
+  margin-top: 3%;
+  }
+
+  Header ul{
+    margin-top: 4%;
+    margin-right: 5%;
+  }
+
+  header ul a{
+    font-size: 1.6em;
+    color: #ffffff;
+  }
+  header ul a:hover{
+    color: #272727;
+  }
+
+header{
+  background-color: #90b9cb;
+  padding-bottom: 10%;
+  }
+
+
+form{
+justify-content: flex-end;
+  max-width: 30%;
+  margin-right:5%;
+}
+
+
+header section h1{
+  text-align: left;
+  margin-left: 5%;
+}
+
+ header section p{
+   font-size: 1.5em;
+   max-width: 55%;
+   text-align: left;
+   margin-left: 5%;
+ }
+
+ header section{
+   margin-top: -65%;
+ }
+
+ main{
+   max-width: 80%;
+   margin-top: 5%;
+   margin-left: 10%;
+ }
+
+ main h4{
+   font-size: 1.1em;
+ }
+
+ h3{
+   font-size: 1.4em;
+ }
+
+ main p{
+   font-size:1.3em;
+ }
+ footer ul{
+  max-width: 40%;
+  margin-left: 30%;
+  
+}
+/*-- einde opmaak mobiel  --*/
+
+
+/*-- begin opmaak groot scherm  --*/
+@media screen and (min-width: 1600px){
+
+
+  header img{
+    max-width: 10%;
+  }
+
+  header ul li a{
+    font-size: 1.4em;
+  }
+  header{
+    background-color: #90b9cb;
+    padding-bottom: 15%;
+    }
+
+    form{
+      max-width: 25%;
+    }
+
+header section{
+  margin-top: -55%;
+}
+header section p{
+  max-width: 45%;
+}
+
+footer img{
+  max-width: 10%;
+}
+
+footer{
+  max-width: 100%;
+}
+
+footer img{
+  width: 20%;
+  }
+
+  footer ul{
+    max-width: 30%;
+    margin-left: 35%;
+    
+  }
+  
+}
+}
+/*-- einde opmaak groot scherm  --*/
+
+
+
+
+/*-- Begin opmaak artikel mobiel  --*/
+@media screen and (min-width: 1280px){
+#blogpost{
+  width: 90%;
+  margin-left: 5%;
+  padding: 0;
+}
+ 
+#blogpost img{
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+  margin-bottom: 4%;
+}
+
+#ondertitel{
+  font-weight: 400;
+  padding:0;
+  margin: 0;
+  margin-bottom: 3%;
+  font-size: 1em;
+}
+
+#blogpost h1{
+  font-weight: 700;
+  padding: 3% 0;
+  margin: 0;
+  margin-bottom: 2%;
+  font-size: 1.6em;
+  color: #272727;
+  text-align: left;
+}
+
+#blogpost p{
+  font-size: 1.1em;
+  font-weight: 400;
+  margin: 0;
+  width: 100%;
+  margin-bottom: 8%;
+  }
+
+#blogpost p:nth-of-type(1){
+  font-weight: 500;
+  margin-bottom: 10%;
+}
+
+#blogpost h2{
+  margin: 0;
+  font-size: 1.2em;
+  max-width: 100%;
+  margin-bottom: 3%;
+}
+
+
+/*-- begin responsive tablet  --*/
+
+@media screen and (min-width: 850px){
+#blogpost #headerfoto{
+  max-width: 100%;
+}
+  #blogpost img{
+    max-width: 60%;
+    margin-bottom: 2%;
+  }
+
+  #ondertitel{
+    margin-bottom: 1%;
+  }
+  #blogpost h1{
+    margin-bottom: 0%;
+    font-size: 1.8em;
+  }
+  #blogpost h2{
+    font-size:1.4em ;
+  }
+
+  #blogpost p{
+    margin-bottom: 4%;
+    font-size: 1.4em;
+  }
+  #blogpost p:nth-of-type(3){
+    margin-bottom: 6%;
+  }
+}
+
+
+/*-- begin responsive tablet  --*/
+
+@media screen and (min-width: 1280px){
+
+
+  #blogpost{
+    margin-top: -10%;
+    width: 100%;
+    margin-left: 10%;
+  }
+}
+
+/*-- begin responsive tablet  --*/
+
+@media screen and (min-width: 1600px){
+#blogpost{
+  margin-top: -15%;
+}
+}
+
 }
